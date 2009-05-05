@@ -1,5 +1,8 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
+  has_many :pages, :through => :bookmarks
+  has_many :bookmarks, :order => "created_at desc"
+
   # Virtual attribute for the unencrypted password
   attr_accessor :password
 
