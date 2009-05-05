@@ -5,7 +5,7 @@
 <%= error_messages_for "bookmark" %>
 <% end -%>
 
-<%= form_tag %>
+<% form_tag do %>
 <dl>
   <dt>URI</dt>
   <dd><%= text_field_tag "uri", @page.uri, :size => 40 %></dd>
@@ -15,5 +15,5 @@
   <dd><%= text_field_tag "comment", @bookmark.comment, :size => 40 %></dd>
 </dl>
 <p><%= submit_tag %></p>
-<%= end_form_tag %>
+<% end %>
 
