@@ -1,0 +1,19 @@
+<h1>ブックマークの追加</h1>
+
+<% if request.post? -%>
+<%= error_messages_for "page" %>
+<%= error_messages_for "bookmark" %>
+<% end -%>
+
+<%= form_tag %>
+<dl>
+  <dt>URI</dt>
+  <dd><%= text_field_tag "uri", @page.uri, :size => 40 %></dd>
+  <dt>タイトル</dt>
+  <dd><%= text_field_tag "title", @page.title, :size => 40 %></dd>
+  <dt>コメント</dt>
+  <dd><%= text_field_tag "comment", @bookmark.comment, :size => 40 %></dd>
+</dl>
+<p><%= submit_tag %></p>
+<%= end_form_tag %>
+

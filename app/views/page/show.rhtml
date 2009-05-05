@@ -1,0 +1,11 @@
+<h1><%= link_to(h(@page.title), h(@page.uri)) %></h1>
+<ul>
+<% for bookmark in @page.bookmarks -%>
+  <li>
+    <%= bookmark.created_at.strftime("%Y年%m月%d日") %>
+    <%= link_to(h(bookmark.user.login), :controller => "user", :action => "show", :id => bookmark.user) %>
+    <%= h(bookmark.comment) %>
+  </li>
+<% end -%>
+</ul>
+
